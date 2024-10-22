@@ -95,7 +95,7 @@ class BusinessHours implements ArrayAccess
      * @param  integer $offset Offset 
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->$offset);
     }
@@ -105,7 +105,7 @@ class BusinessHours implements ArrayAccess
      * @param  integer $offset Offset 
      * @return mixed 
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->$offset;
     }
@@ -116,7 +116,7 @@ class BusinessHours implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $this->$offset = $value;
     }
@@ -126,7 +126,7 @@ class BusinessHours implements ArrayAccess
      * @param  integer $offset Offset 
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->$offset);
     }
