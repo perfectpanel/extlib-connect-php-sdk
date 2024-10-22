@@ -12,17 +12,17 @@ final class CaseInsensitiveArray extends \ArrayObject {
     parent::__construct($input);
   }
 
-  public function offsetSet($i, $v) {
+  public function offsetSet($i, $v): void {
     $this->lower_dict[strtolower($i)] = $v;
     parent::offsetSet($i, $v);
   }
 
-  public function offsetUnset($i) {
+  public function offsetUnset($i): void {
     $this->lower_dict[strtolower($i)] = null;
     parent::offsetUnset($i);
   }
 
-  public function offsetGet($i) {
+  public function offsetGet($i): mixed {
     if ($this->lower_dict[strtolower($i)]) {
       return $this->lower_dict[strtolower($i)];
     } else if (parent::offsetGet($i)) {
